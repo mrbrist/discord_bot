@@ -27,6 +27,7 @@ exports.run = (client, msg) => {
       } else if (m.content.startsWith(settings.prefix + "skip")){
         msg.channel.sendMessage(":track_next: Skipped").then(() => {dispatcher.end();});
       } else if (m.content.startsWith(settings.prefix + "stop")){
+        if (!msg.member.voiceChannel) return msg.reply('You are not in a voice channel');
         msg.channel.sendMessage(":stop_button: Stopped").then(() => {dispatcher.end(1);});
       } else if (m.content.startsWith("volume+")){
         if (Math.round(dispatcher.volume*50) >= 100) return msg.channel.sendMessage(`:loudspeaker: Volume: ${Math.round(dispatcher.volume*50)}%`);
@@ -42,9 +43,6 @@ exports.run = (client, msg) => {
     });
     dispatcher.on("end", (stop) => {
       if (stop == 1) {
-        if (!msg.member.voiceChannel) {
-          return msg.reply('You are not in a voice channel');
-        }
         collector.stop();
         delete client.queue[msg.guild.id];
         console.log(client.queue);
