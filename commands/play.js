@@ -42,6 +42,9 @@ exports.run = (client, msg) => {
     });
     dispatcher.on("end", (stop) => {
       if (stop == 1) {
+        if (!msg.member.voiceChannel) {
+          return msg.reply('You are not in a voice channel');
+        }
         collector.stop();
         delete client.queue[msg.guild.id];
         console.log(client.queue);
