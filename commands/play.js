@@ -1,6 +1,6 @@
 const settings = require('../settings.json');
 const yt = require("ytdl-core");
-require("node-opus");
+require("opusscript");
 
 exports.run = (client, msg) => {
   if (client.queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`Add some songs to the queue first with ${settings.prefix}add`);
