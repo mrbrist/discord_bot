@@ -1,1 +1,1 @@
-# DickBott Discord bot
+# DickBott the Discord bot
