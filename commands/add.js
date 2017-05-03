@@ -1,7 +1,7 @@
 const yt = require("ytdl-core");
 
 exports.run = (client, msg, [song]) => {
-  if (!song) return msg.channel.sendMessage("Invalid YouTube Link: " + err);
+  if (!song) return msg.channel.sendMessage("Invalid YouTube Link");
   if(!client.hasOwnProperty("queue")) client.queue = {};
   yt.getInfo(song, (err, info) => {
     if(err) return msg.channel.sendMessage("Invalid YouTube Link: " + err);
