@@ -1,6 +1,5 @@
 const settings = require('../settings.json');
 exports.run = (client, message, args) => {
-  if (message.author.id !== settings.ownerid) return message.reply('You are not Brist... Fuck off!');
   let command;
   if (client.commands.has(args[0])) {
     command = args[0];
