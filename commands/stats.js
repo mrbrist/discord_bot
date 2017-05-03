@@ -1,6 +1,6 @@
 const settings = require('../settings.json');
 exports.run = (client, message) => {
-  if (msg.author.id !== settings.ownerid) return msg.reply('You are not Brist... Fuck off!');
+  if (message.author.id !== settings.ownerid) return message.reply('You are not Brist... Fuck off!');
   message.channel.sendMessage('Under Construction');
 };
 
