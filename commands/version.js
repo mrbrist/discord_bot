@@ -1,5 +1,7 @@
 const version = require('../package.json').version;
+const settings = require('../settings.json');
 exports.run = (client, message) => {
+  if (msg.author.id !== settings.ownerid) return msg.reply('You are not Brist... Fuck off!');
   message.channel.sendMessage('Loading Version...')
     .then(msg => {
       msg.edit(`\`v${version}\``);
