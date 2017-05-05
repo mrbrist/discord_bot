@@ -3,6 +3,7 @@ const yt = require("ytdl-core");
 require("opusscript");
 
 exports.run = (client, msg) => {
+  msg.reply(msg.channel.id);
   if (msg.channel.id !== 218135644289892352 || 216169559726620675) return msg.channel.sendMessage('Invalid channel');
   if (client.queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`Add some songs to the queue first with ${settings.prefix}add`);
   if (!msg.guild.voiceConnection) return client.commands.get("join").run(client, msg).then(() => client.commands.get("play").run(client, msg));
