@@ -3,11 +3,11 @@ const settings = require('../settings.json');
 exports.run = (client, message) => {
   console.log(message.author.id);
   if (message.author.id == settings.ownerid) {
-    return;
     message.channel.sendMessage('Loading Version...')
       .then(msg => {
         msg.edit(`\`v${version}\``);
       });
+    return;
   }
   message.reply('You are not Brist... Fuck off!');
 };
