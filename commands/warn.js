@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
   if (reason.length < 1) return message.reply('You have not given a reason');
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn them').catch(console.error);
 
-  message.channel.sendMessage(`Warn successful! Logged to ${modlog}`);
+  message.channel.send(`Warn successful! Logged to ${modlog}`);
 
   const embed = new Discord.RichEmbed()
     .setTitle('')

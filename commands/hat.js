@@ -3,9 +3,9 @@ exports.run = (client, message, args) => {
 
 var user = message.mentions.users.random();
 
-  message.channel.sendMessage('Picking a name...')
+  message.channel.send('Picking a name...')
   .then(msg => {
-      message.channel.sendMessage('I choose: ' + user);
+      message.channel.send('I choose: ' + user);
   });
 };
 
