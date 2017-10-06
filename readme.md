@@ -42,16 +42,14 @@
 #---------Moderation--------#
 
 #Name: .warn
-#Desc: warns the @User with the [message]
+#Desc: Warns the @User with the [message]
+#Extra: Requires 'mod-log' channel
 
 
 #---------Useful--------#
 
 #Name: .help
 #Desc: Displays a list of commands
-
-#Name: .warn
-#Desc: warns the @User with the [message]
 
 
 #---------Maintenance--------#
@@ -69,6 +67,14 @@
 #Desc: Reloads the bot
 
 
+#-----------------Extra Info-----------------#
+
+
+#-----------Required Channels-----------#
+
+#'mod-log' 
+
+#'logchannel'
 
 
 
@@ -77,14 +83,7 @@
 
 
 
-
-
-
-
-
-
-
-
+#-----------------Credit-----------------#
 
 #Made by Brist
 #Edits made by Turner
