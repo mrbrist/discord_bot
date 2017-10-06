@@ -16,7 +16,7 @@ module.exports = message => {
     .setAuthor(message.author.username, message.author.avatarURL)
     .setColor(0xFFC200)
     .setTimestamp()
-    .addField('Channel:', `${message.channel}`)
+    .addField('Channel:', `${message.channel.name}`)
     .addField('TTS:', `${message.tts}`)
     .addField('Message:', `${message.content}`)
     message.client.channels.get(logChannel.id).sendEmbed(embed);
