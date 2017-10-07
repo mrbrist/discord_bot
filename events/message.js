@@ -2,16 +2,16 @@ const settings = require('../settings.json');
 const Discord = require('discord.js');
 module.exports = message => {
 
-
-
   if (message.author.bot) return;
   if (message.channel.id == 361888311196909578);
   let client = message.client;
-
+  let UserRole = message.member.displayHexColor;
+  console.log(UserRole)
     const embed = new Discord.RichEmbed()
     .setTitle('')
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setColor(0xFFC200)
+    //.setColor(0xFFC200)
+    .setColor(UserRole)
     .setTimestamp()
     .addField('Channel:', `${message.channel}`)
     .addField('TTS:', `${message.tts}`)
