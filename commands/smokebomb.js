@@ -1,5 +1,6 @@
-exports.run = (client, message) => {
-  message.channel.bulkDelete(10);
+exports.run = (client, message, args) => {
+  var Amount = args.slice(0);
+  message.channel.bulkDelete(parseInt(Amount) + 1);
 };
 
 exports.conf = {
