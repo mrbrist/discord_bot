@@ -6,7 +6,7 @@ exports.run = (client, message) => {
     .then(images => {
       message.channel.send('You want a nope? Really?')
         .then(msg => {
-          msg.edit(images[0].url)
+          msg.edit(images[Math.floor(Math.random()*images.length)].url)
         });
     });
 };
