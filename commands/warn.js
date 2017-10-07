@@ -8,11 +8,11 @@ exports.run = (client, message, args) => {
   if (message.mentions.users.size < 1) return message.reply('You must mention someone to warn them').catch(console.error);
 
   message.channel.send(`Warn successful! Logged to ${modlog}`);
-
+  let UserRole = message.member.displayHexColor;
   const embed = new Discord.RichEmbed()
     .setTitle('')
     .setAuthor('Moderation', message.author.avatarURL)
-    .setColor(0xFFC200)
+    .setColor(UserRole)
     .setTimestamp()
     .addField('Actions', 'Warning')
     .addField('Reason', `${reason}`)
