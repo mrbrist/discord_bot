@@ -17,7 +17,12 @@ module.exports = message => {
     .addField('Channel:', `${message.channel}`)
     .addField('TTS:', `${message.tts}`)
     if(!message.content){
-    embed.addField('Message Contains Image', `'Unknown Image'`)
+
+    var Images = (message.attachments).array();
+    for(var i = 0; i < Images.length; i++){
+      embed.addField('Message Contains Image', `${Images[i].url}`)
+    }
+
     }else{
     embed.addField('Message:', `${message.content}`)
     }
