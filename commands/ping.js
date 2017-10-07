@@ -1,5 +1,5 @@
 exports.run = (client, message) => {
-  message.channel.sendMessage('Yes Daddy!')
+  message.channel.send('Yes Daddy!')
     .then(msg => {
       msg.edit(`Pong! (took: \`${msg.createdTimestamp - message.createdTimestamp}ms\`)`);
     });
