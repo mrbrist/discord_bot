@@ -1,18 +1,14 @@
 const GoogleImages = require('google-images');
 const imagesGoogle = new GoogleImages('009565028834274790724:v44gvc8ozku', 'AIzaSyAkyJYTuOIKw42msRRuxarK8n0fPg_dQR4');
 
-function getRandom(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-exports.run = (client, message) => {
+exports.run = (client, message, args) => {
   PageNum = Math.floor(Math.random()*50)
   Start = Math.floor(Math.random()*10)
   console.log(PageNum)
   console.log(Start)
-  imagesGoogle.search('Spider', {page: PageNum, start: Start, colorType: 'color'})
+  imagesGoogle.search(args.slice(0).join(" "), {page: PageNum, start: Start, colorType: 'color'})
     .then(images => {
-      message.channel.send('You want a nope? Really?')
+      message.channel.send('Coming right up!')
         .then(msg => {
           msg.edit(images[Math.floor(Math.random()*images.length)].url)
         });
@@ -22,12 +18,12 @@ exports.run = (client, message) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['nopenope', 'lolnope', 'fucknope', '4eyefuck'],
+  aliases: [],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'nope',
-  description: 'Spider Pics',
-  usage: 'nope'
+  name: 'image',
+  description: 'Search for an image',
+  usage: 'image'
 };
