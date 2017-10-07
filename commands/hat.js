@@ -5,7 +5,7 @@ var user = message.mentions.users.random();
 
   message.channel.send('Picking a name...')
   .then(msg => {
-      message.channel.send('I choose: ' + user);
+      msg.edit('I choose: ' + user);
   });
 };
 
