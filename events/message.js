@@ -3,13 +3,11 @@ const Discord = require('discord.js');
 module.exports = message => {
 
   let logChannel = message.guild.channels.find('name', 'logchannel');
-  
+
   if (message.author.bot) return;
   if (message.channel.id == 361888311196909578);
   let client = message.client;
-  //TODO: Fix This
-
-    //logChannel.send(`(${message.createdTimestamp}) (TTS:${message.tts}) ${message.author.tag}@${message.channel.name}: ${message.content}`)
+  //TODO: add way to show images
 
     const embed = new Discord.RichEmbed()
     .setTitle('')
@@ -18,9 +16,14 @@ module.exports = message => {
     .setTimestamp()
     .addField('Channel:', `${message.channel}`)
     .addField('TTS:', `${message.tts}`)
-    .addField('Message:', `${message.content}`)
+    if(!message.content){
+    embed.addField('Message Contains Image', `'Unknown Image'`)
+    }else{
+    embed.addField('Message:', `${message.content}`)
+    }
+
     message.client.channels.get(logChannel.id).sendEmbed(embed);
-  
+
   if (!message.content.startsWith(settings.prefix)) return;
   let command = message.content.split(' ')[0].slice(settings.prefix.length);
   let params = message.content.split(' ').slice(1);
