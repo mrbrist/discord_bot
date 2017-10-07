@@ -2,12 +2,11 @@ const settings = require('../settings.json');
 const Discord = require('discord.js');
 module.exports = message => {
 
-  let logChannel = message.guild.channels.find('name', 'logchannel');
+
 
   if (message.author.bot) return;
   if (message.channel.id == 361888311196909578);
   let client = message.client;
-  //TODO: add way to show images
 
     const embed = new Discord.RichEmbed()
     .setTitle('')
@@ -16,18 +15,18 @@ module.exports = message => {
     .setTimestamp()
     .addField('Channel:', `${message.channel}`)
     .addField('TTS:', `${message.tts}`)
-    if(!message.content){
 
+  let logChannel = message.guild.channels.find('name', 'logchannel');
+
+  if(!message.content){
     var Images = (message.attachments).array();
-    for(var i = 0; i < Images.length; i++){
-      embed.addField('Message Contains Image', `${Images[i].url}`)
-    }
-
-    }else{
+      for(var i = 0; i < Images.length; i++){
+        embed.addField('Message Contains Image', `${Images[i].url}`)
+      }
+  }else{
     embed.addField('Message:', `${message.content}`)
-    }
-
-    message.client.channels.get(logChannel.id).sendEmbed(embed);
+  }
+  message.client.channels.get(logChannel.id).sendEmbed(embed);
 
   if (!message.content.startsWith(settings.prefix)) return;
   let command = message.content.split(' ')[0].slice(settings.prefix.length);

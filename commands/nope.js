@@ -7,7 +7,7 @@ exports.run = (client, message) => {
     .then(msg => {
       client.search('Spider')
       .then(images => {
-        
+
           /*
           [{
               "url": "http://steveangello.com/boss.jpg",
@@ -35,6 +35,6 @@ exports.conf = {
 
 exports.help = {
   name: 'nope',
-  description: 'Hairy Nope Pics',
+  description: 'Spider Pics',
   usage: 'nope'
 };
