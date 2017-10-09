@@ -1,22 +1,21 @@
 const Discord = require('discord.js');
 exports.run = (client, message, args) => {
-var Sides = args.slice(0)
-var NumberOfDie = args.slice(2)
+var Inputs = args.slice(0)
+var Sides = Inputs[0]
+var NumberOfDie = Inputs[1]
 let TempArray = []
 var Result = 0
-console.log(Sides)
-console.log(NumberOfDie)
 
+if(NumberOfDie < 1){
+NumberOfDie = 1
+}
   message.channel.send('Rolling...')
   .then(msg => {
-
       for(var i = 0; i < NumberOfDie; i++){
         Result = (Math.floor(Math.random()*parseInt(Sides)) + 1)
-        TempArray.push(Result)
-        console.log(i)
+        TempArray.push(" " + Result)
       }
       msg.edit('The Results are: ' + TempArray.toString());
-
   });
 };
 
