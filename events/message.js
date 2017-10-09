@@ -9,7 +9,6 @@ module.exports = message => {
     const embed = new Discord.RichEmbed()
     .setTitle('')
     .setAuthor(message.author.username, message.author.avatarURL)
-    //.setColor(0xFFC200)
     .setColor(UserRole)
     .setTimestamp()
     .addField('Channel:', `${message.channel}`)

@@ -11,13 +11,11 @@ exports.run = (client, message, args) => {
   let UserRole = message.member.displayHexColor;
   const embed = new Discord.RichEmbed()
     .setTitle('')
-    .setAuthor('Moderation', message.author.avatarURL)
+    .setAuthor('Warning', user.avatarURL)
     .setColor(UserRole)
     .setTimestamp()
-    .addField('Actions', 'Warning')
     .addField('Reason', `${reason}`)
-    .addField('User', `${user.username}#${user.discriminator}`)
-    .addField('Moderator', `${message.author.username}#${message.author.discriminator}`);
+    .addField('Warned By', `${message.author.username}#${message.author.discriminator}`);
     return client.channels.get(modlog.id).sendEmbed(embed);
   };
 
