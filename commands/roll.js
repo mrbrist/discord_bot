@@ -5,9 +5,11 @@ var Sides = Inputs[0]
 var NumberOfDie = Inputs[1]
 let TempArray = []
 var Result = 0
-
-if(NumberOfDie < 1){
+if(!NumberOfDie){ 
 NumberOfDie = 1
+var MessageText = "The result is: "
+}else{
+var MessageText = "The Results are: "
 }
   message.channel.send('Rolling...')
   .then(msg => {
@@ -15,7 +17,7 @@ NumberOfDie = 1
         Result = (Math.floor(Math.random()*parseInt(Sides)) + 1)
         TempArray.push(" " + Result)
       }
-      msg.edit('The Results are: ' + TempArray.toString());
+      msg.edit(MessageText + TempArray.toString());
   });
 };
 
