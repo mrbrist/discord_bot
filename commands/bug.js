@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const cryptoRandomString = require('crypto-random-string');
 exports.run = (client, message, args) => {
   let desc = args.slice(0).join(' ');
   let bugs = message.guild.channels.find('name', 'bugs');
@@ -10,7 +11,7 @@ exports.run = (client, message, args) => {
   let UserColor = message.author.displayHexColor;
   const embed = new Discord.RichEmbed()
     .setTitle('')
-    .setAuthor('Bug', message.author.avatarURL)
+    .setAuthor(`Bug - ${cryptoRandomString(10)}`, message.author.avatarURL)
     .setColor(UserColor)
     .setTimestamp()
     .addField('Bug Description', `${desc}`);
