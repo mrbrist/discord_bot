@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = message => {
 
   if (message.author.bot) return;
-  if (message.pinned) return;
+  if (message.content == null) return;
   if (message.channel.id == 361888311196909578);
   let client = message.client;
   let UserRole = message.member.displayHexColor;
