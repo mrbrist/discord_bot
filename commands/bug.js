@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
   const embed = new Discord.RichEmbed()
     .setTitle('')
     .setAuthor(`Bug - ${cryptoRandomString(10)}`, message.author.avatarURL)
-    .setColor(UserColor)
+    .setColor(0x990000)
     .setTimestamp()
     .addField('Bug Description', `${desc}`);
     return client.channels.get(bugs.id).sendEmbed(embed);
