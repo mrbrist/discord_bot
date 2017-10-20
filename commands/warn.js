@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
     .setColor(UserRole)
     .setTimestamp()
     .addField('User', `${user}`)
-    .addField('Warned By', `${message.author}#${message.author.discriminator}`)
+    .addField('Warned By', `${message.author}`)
     .addField('Reason', `${reason}`);
     return client.channels.get(modlog.id).sendEmbed(embed);
   };
