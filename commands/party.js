@@ -11,7 +11,7 @@ exports.run = (client, msg) => {
   client.queue[msg.guild.id].playing = true;
 
   let PartyChannel = msg.member.voiceChannel;
-  let User = ;
+  let User = 'temp';
 
   moveMember(User, PartyChannel)
 
