@@ -66,6 +66,10 @@
 #Name: .reload
 #Desc: Reloads the bot
 
+#Name: .bug
+#Desc: Records the bug with the [description]
+#Extra: Requires 'bugs' channel
+
 
 #-----------------Extra Info-----------------#
 
@@ -76,11 +80,7 @@
 
 #'logchannel'
 
-
-
-
-
-
+#'bugs'
 
 
 #-----------------Credit-----------------#

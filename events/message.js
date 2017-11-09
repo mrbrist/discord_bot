@@ -7,6 +7,8 @@ module.exports = message => {
   if (message.channel.id == 361888311196909578);
   let client = message.client;
   let UserRole = message.member.displayHexColor;
+  let MessType = message.MessageType;
+  if(message.channel !== "bot-dev" || "bugs"){
     const embed = new Discord.RichEmbed()
     .setTitle('')
     .setAuthor(message.author.username, message.author.avatarURL)
@@ -15,17 +17,18 @@ module.exports = message => {
     .addField('Channel:', `${message.channel}`)
     .addField('TTS:', `${message.tts}`)
 
-  let logChannel = message.guild.channels.find('name', 'logchannel');
+    let logChannel = message.guild.channels.find('name', 'logchannel');
 
-  if(!message.content){
-    var Images = (message.attachments).array();
-      for(var i = 0; i < Images.length; i++){
-        embed.addField('Message Contains Image', `${Images[i].url}`)
-      }
-  }else{
-    embed.addField('Message:', `${message.content}`)
+    if(!message.content){
+      var Images = (message.attachments).array();
+        for(var i = 0; i < Images.length; i++){
+          embed.addField('Message Contains Image', `${Images[i].url}`)
+        }
+    }else{
+      embed.addField('Message:', `${message.content}`)
+    }
+    message.client.channels.get(logChannel.id).send(embed);
   }
-  message.client.channels.get(logChannel.id).send(embed);
 
   if (!message.content.startsWith(settings.prefix)) return;
   let command = message.content.split(' ')[0].slice(settings.prefix.length);

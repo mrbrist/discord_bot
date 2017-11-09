@@ -5,6 +5,10 @@ function getRandom(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+//TEMP DISABLED, TODO: FIX
+message.channel.send('Im sorry, this command is disabled at the moment. :/')
+return;
+
 exports.run = (client, message) => {
   PageNum = Math.floor(Math.random()*50)
   Start = Math.floor(Math.random()*10)
