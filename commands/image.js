@@ -3,9 +3,9 @@ const imagesGoogle = new GoogleImages('009565028834274790724:v44gvc8ozku', 'AIza
 
 exports.run = (client, message, args) => {
 
-//TEMP DISABLED, TODO: FIX
-message.channel.send('Im sorry, this command is disabled at the moment. :/')
-return;
+  //TEMP DISABLED, TODO: FIX
+  message.channel.send('Im sorry, this command is disabled at the moment. :/')
+  return;
 
   PageNum = Math.floor(Math.random()*50)
   Start = Math.floor(Math.random()*10)
