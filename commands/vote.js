@@ -3,13 +3,15 @@ exports.run = (client, message, args) => {
 
  message.channel.send('Generating Voting Link...')
    .then(msg => {
-    let Desc = args.toString().split('?') + '?'
+    let Desc = args.toString().split('?')
     let Title = Desc[0].toString().replace(/,/g,' ')
     let Options = Desc[1].replace(/^,|,$/g,'')
 
       var poll = { 
         title: Title, 
-        options: [1,2,3] //Options doesnt seem to work here idk why?
+        //options: Options
+        options: [1,2,3] //Options doesnt seem to work here idk why? 
+        //could be an issue with the replace on line 8
       };
 
       request.post({
@@ -36,6 +38,6 @@ exports.conf = {
 
 exports.help = {
   name: 'vote',
-  description: 'Generate a strawpoll link (all parameters must be enclosed in []',
+  description: 'Generate a strawpoll link.',
   usage: 'vote (description)? (option) (option) ...'
 };
