@@ -5,7 +5,7 @@ require("opusscript");
 exports.run = (client, msg) => {
 
   //TEMP DISABLED, TODO: FIX
-  message.channel.send('Im sorry, this command is disabled at the moment. :/')
+  msg.channel.send('Im sorry, this command is disabled at the moment. :/')
   return;
   
   if (msg.channel.id != 218135644289892352) return msg.channel.sendMessage('Invalid channel');
