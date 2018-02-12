@@ -19,5 +19,5 @@ exports.conf = {
 exports.help = {
   name: 'hat',
   description: 'Picks a name from a selection of names.',
-  usage: 'hat'
+  usage: 'hat @User...'
 };
