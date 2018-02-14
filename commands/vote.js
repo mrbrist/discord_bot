@@ -23,6 +23,8 @@ exports.run = (client, message, args) => {
           function (error, response, body) {
               if (!error && response.statusCode == 200) {
                 msg.edit('Here is your link: http://www.strawpoll.me/' + body.id)
+              }else{
+                msg.edit('Im sorry I can\'t do that right now :/ ' + error.message)
               }
           }
       );

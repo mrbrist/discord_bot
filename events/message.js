@@ -8,7 +8,7 @@ module.exports = message => {
   let client = message.client;
   let UserRole = message.member.displayHexColor;
   let MessType = message.MessageType;
-  if(message.channel !== "bot-dev" || "bugs"){
+  if(message.channel.name !== "bot-dev" && message.channel.name !== "bugs"){
     const embed = new Discord.RichEmbed()
     .setTitle('')
     .setAuthor(message.author.username, message.author.avatarURL)
@@ -19,15 +19,10 @@ module.exports = message => {
 
     let logChannel = message.guild.channels.find('name', 'logchannel');
 
-    if(!message.content){
-      var Images = (message.attachments).array();
-        for(var i = 0; i < Images.length; i++){
-          embed.addField('Message Contains Image', `${Images[i].url}`)
-        }
-    }else{
+    if(message.content){
       embed.addField('Message:', `${message.content}`)
+      message.client.channels.get(logChannel.id).send(embed);
     }
-    message.client.channels.get(logChannel.id).send(embed);
   }
 
   if (!message.content.startsWith(settings.prefix)) return;
