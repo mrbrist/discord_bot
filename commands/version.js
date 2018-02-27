@@ -9,7 +9,7 @@ exports.run = (client, message) => {
       });
     return;
   }
-  message.reply('You are not Brist... Fuck off!');
+  message.reply('You\'re mom gay lol');
 };
 
 exports.conf = {
