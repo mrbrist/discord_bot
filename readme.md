@@ -1,4 +1,4 @@
-# DickBott the Discord bot
+# discord_bot the Discord bot
 
 #-----------------Commands-----------------#
 
